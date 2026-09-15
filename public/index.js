@@ -1,4 +1,5 @@
 "use strict";
+
 /**
  * @type {HTMLFormElement}
  */
@@ -62,3 +63,46 @@ form.addEventListener("submit", async (event) => {
 	document.body.appendChild(frame.frame);
 	frame.go(url);
 });
+
+/* ==========================================================================
+   DYNAMIC SUBTITLE ROTATION LOGIC
+   ========================================================================== */
+
+// Easily add, remove, or modify your custom subtitles inside this array.
+const subTitlesList = [
+	"i will change the url if yall leak (looking at u connor chawke)",
+	"u can bypass the captcha.",
+	"u can bypass the captcha..",
+	"u can bypass the captcha...",
+	"u can bypass the captcha....",
+	"u can bypass the captcha.....",
+	"dont tell the teachers",
+	"DONT LEAK THE LINK",
+	"DONT LEAK THE LINK",
+	"DONT LEAK THE LINK",
+	"DONT LEAK THE LINK",
+	"DONT LEAK THE LINK",
+	"DONT LEAK THE LINK",
+	"DONT LEAK THE LINK",
+	"chromebook club sucks",
+	"chromebook club sucks",
+	"chromebook club sucks",
+];
+
+/**
+ * Chooses a random subtitle from the list and injects it into the DOM.
+ */
+function initializeDynamicSubtitle() {
+	const targetElement = document.getElementById('dynamic-subtitle');
+	if (targetElement) {
+		const randomIndex = Math.floor(Math.random() * subTitlesList.length);
+		targetElement.textContent = subTitlesList[randomIndex];
+	}
+}
+
+// Executes immediately if DOM is ready, otherwise waits for parser lifecycle completion.
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initializeDynamicSubtitle);
+} else {
+	initializeDynamicSubtitle();
+}
