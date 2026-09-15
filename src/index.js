@@ -10,6 +10,9 @@ import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 
 const publicPath = fileURLToPath(new URL("../public/", import.meta.url));
+const speedInsightsPath = fileURLToPath(
+	new URL("../node_modules/@vercel/speed-insights/dist/", import.meta.url)
+);
 
 // Wisp Configuration: Refer to the documentation at https://www.npmjs.com/package/@mercuryworkshop/wisp-js
 
@@ -55,6 +58,12 @@ fastify.register(fastifyStatic, {
 fastify.register(fastifyStatic, {
 	root: baremuxPath,
 	prefix: "/baremux/",
+	decorateReply: false,
+});
+
+fastify.register(fastifyStatic, {
+	root: speedInsightsPath,
+	prefix: "/speed-insights/",
 	decorateReply: false,
 });
 
