@@ -84,9 +84,9 @@ const subTitlesList = [
 	"DONT LEAK THE LINK",
 	"DONT LEAK THE LINK",
 	"DONT LEAK THE LINK",
-	"chromebook club sucks",
-	"chromebook club sucks",
-	"chromebook club sucks",
+	"chromebook corner sucks",
+	"chromebook corner sucks",
+	"chromebook corner sucks",
 ];
 
 /**
